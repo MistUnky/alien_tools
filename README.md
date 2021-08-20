@@ -1,6 +1,6 @@
 #alien_tools
 
-Alien Tools Mod for Minetest - adds Alien Tool, Shield, biomes, etc
+Alien Tools Mod for Minetest - adds Alien Tool, Shield, biome, etc
 
 Alien Biome (Stone, Soil, Plant, Plasma) - replaces all other biomes
 
