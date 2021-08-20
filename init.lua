@@ -1,6 +1,8 @@
-minetest.register_on_joinplayer(function(player)
-	player:set_physics_override({new_move = false, sneak_glitch = true})
-end)
+if minetest.settings:get_bool("alien_sneak") == true then
+	minetest.register_on_joinplayer(function(player)
+		player:set_physics_override({new_move = false, sneak_glitch = true})
+	end)
+end
 
 minetest.register_tool("alien_tools:flame", {
 	description = "Alien Flame",
@@ -121,11 +123,12 @@ minetest.register_craftitem("alien_tools:core", {
 
 wielded_light.register_item_light("alien_tools:core", 4)
 
-minetest.clear_registered_biomes()
-minetest.clear_registered_ores()
-minetest.clear_registered_decorations()
-
-minetest.set_mapgen_params({flags = "nocaves, nocaverns, nodungeons"})
+if minetest.settings:get_bool("alien_replace") == nil or minetest.settings:get_bool("alien_replace") == true then
+	minetest.clear_registered_biomes()
+	minetest.clear_registered_ores()
+	minetest.clear_registered_decorations()
+	minetest.set_mapgen_params({flags = "nocaves, nocaverns, nodungeons"})
+end
 
 minetest.register_biome({
 	node_top = "alien_tools:soil",
