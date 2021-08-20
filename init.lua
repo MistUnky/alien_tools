@@ -1,9 +1,3 @@
-if minetest.settings:get_bool("alien_sneak") == true then
-	minetest.register_on_joinplayer(function(player)
-		player:set_physics_override({new_move = false, sneak_glitch = true})
-	end)
-end
-
 minetest.register_tool("alien_tools:flame", {
 	description = "Alien Flame",
 	range = 69,
@@ -30,6 +24,10 @@ armor:register_armor("alien_tools:shield", {
 	description = "Alien Shield",
 	inventory_image = "alien_tools_shield.png",
 	groups = {armor_shield = 2317, armor_heal = 2317, armor_use = 0},
+	on_use = function(itemstack, player, pointed_thing)
+		player:set_physics_override({new_move = false, sneak_glitch = true})
+		minetest.chat_send_player(player:get_player_name(), "Sneak Jump Power Enabled!")
+	end,
 })
 
 wielded_light.register_item_light("alien_tools:shield", 3)

@@ -17,5 +17,3 @@ recommends: galaxybox | (for lighting and skybox), or a similar mod
 Settings:
 
 alien_replace : default true - if true replace all biomes with alien biome and disable caves and dungeons, otherwise just add the biome
-
-alien_sneak : default false - if true sneak jump enabled

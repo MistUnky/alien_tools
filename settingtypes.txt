@@ -1,3 +1,1 @@
 alien_replace (Replace all biomes with alien biome and disable caves and dungeons) bool true
-
-alien_sneak (Enable sneak jump) bool false
